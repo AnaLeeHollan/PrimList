@@ -36,3 +36,19 @@ button.selected { background: #2f5d50; color: white; font-weight: bold; }
   background: white;
   margin-top: 10px;
 }
+
+.photoButton {
+  display: inline-block;
+  background: #356859;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px;
+  border-radius: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.photoButton input {
+  display: none;
+}
