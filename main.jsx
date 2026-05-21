@@ -52,7 +52,13 @@ function App() {
               <input type="file" accept="image/*" onChange={handlePhoto} hidden />
             </label>
 
-            {image && <img src={image} className="previewImage" />}
+            
+{image && (
+  <img
+    src={URL.createObjectURL(image)}
+    className="previewImage"
+  />
+)}
           </div>
 
           <label>Item notes</label>
