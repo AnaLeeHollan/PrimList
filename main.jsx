@@ -62,7 +62,16 @@ function App() {
             <input
               type="file"
               accept="image/*"
-              onChange={(e) => setImage(e.target.files?.[0])}
+              onChange={(e) => {
+  const file = e.target.files[0]
+  if (!file) return
+
+  setImage(null)
+
+  setTimeout(() => {
+    setImage(file)
+  }, 100)
+}}
             />
             {image && <p className="small">Photo selected: {image.name}</p>}
           </div>
