@@ -23,3 +23,16 @@ button.selected { background: #2f5d50; color: white; font-weight: bold; }
 .row h3 { margin: 0; }
 .row button { padding: 8px 12px; color: #2f5d50; font-weight: bold; background: #efe6d8; }
 .small { font-size: 13px; color: #6d6258; }
+.previewWrap {
+  margin-top: 16px;
+}
+
+.previewImage {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 18px;
+  border: 1px solid #ded2c1;
+  background: white;
+  margin-top: 10px;
+}
