@@ -55,7 +55,7 @@ function App() {
             
 {image && (
   <img
-    src={URL.createObjectURL(image)}
+    src={image}
     className="previewImage"
   />
 )}
