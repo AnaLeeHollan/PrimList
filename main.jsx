@@ -79,7 +79,9 @@ function App() {
             ))}
           </div>
 
-          <button className="generate" onClick={generateListing}>Generate My Listing</button>
+         <button className="generate" onClick={generateListing}>
+  Generate My Listing
+</button>
 
           {result && (
             <div className="results">
