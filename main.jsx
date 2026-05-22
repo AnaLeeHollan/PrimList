@@ -18,10 +18,10 @@ function App() {
 
   function generateListing() {
     setResult({
-      title: 'Vintage Hand Painted Wooden Bucket | Folk Art Farmhouse Decor',
+      title: 'Vintage Handmade Primitive Decor Piece',
       price: '$38 - $58',
-      tags: 'primitive decor, folk art bucket, farmhouse decor, vintage wooden bucket, country kitchen, rustic decor, hand painted, cabin decor',
-      description: `A charming vintage-style piece with warm country character. Great for primitive, farmhouse, cabin, or rustic home decor. ${notes}`
+      tags: 'primitive decor, farmhouse decor, vintage decor, rustic decor, handmade, country decor, cabin decor, folk art',
+      description: `A charming vintage-style piece with warm primitive character. Great for farmhouse, cabin, rustic, or country home decor. ${notes}`
     })
   }
 
@@ -52,36 +52,39 @@ function App() {
               <input type="file" accept="image/*" onChange={handlePhoto} hidden />
             </label>
 
-            
-{image && (
-  <img
-    src={image}
-    className="previewImage"
-  />
-)}
-            
-    
+            {image && (
+              <img src={image} className="previewImage" />
+            )}
+          </div>
 
           <label>Item notes</label>
-          <textarea value={notes} onChange={e => setNotes(e.target.value)} placeholder="Add condition, size, age, flaws..." />
+          <textarea
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="Add condition, size, age, flaws..."
+          />
 
           <label>Where are you listing?</label>
           <div className="grid">
-            {['Etsy', 'eBay', 'Facebook', 'Mercari', 'Poshmark'].map(p => (
-              <button className={platform === p ? 'selected' : ''} onClick={() => setPlatform(p)}>{p}</button>
+            {['Etsy', 'eBay', 'Facebook', 'Mercari', 'Poshmark'].map((p) => (
+              <button key={p} className={platform === p ? 'selected' : ''} onClick={() => setPlatform(p)}>
+                {p}
+              </button>
             ))}
           </div>
 
           <label>Writing style</label>
           <div className="styles">
-            {['Country / Primitive', 'Simple & Friendly', 'Professional', 'Vintage Boutique', 'Fun & Quirky'].map(s => (
-              <button className={style === s ? 'selected' : ''} onClick={() => setStyle(s)}>{s}</button>
+            {['Country / Primitive', 'Simple & Friendly', 'Professional', 'Vintage Boutique', 'Fun & Quirky'].map((s) => (
+              <button key={s} className={style === s ? 'selected' : ''} onClick={() => setStyle(s)}>
+                {s}
+              </button>
             ))}
           </div>
 
-         <button className="generate" onClick={generateListing}>
-  Generate My Listing
-</button>
+          <button className="generate" onClick={generateListing}>
+            Generate My Listing
+          </button>
 
           {result && (
             <div className="results">
