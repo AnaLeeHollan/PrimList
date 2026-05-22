@@ -21,12 +21,21 @@ function App() {
 
   const data = await response.json()
 
-  setResult({
-    title: data.choices?.[0]?.message?.content || 'AI failed',
-    price: '$38 - $58',
-    tags: 'AI generated tags coming soon',
-    description: data.choices?.[0]?.message?.content || 'No description generated'
-  })
+  const aiText = data.choices?.[0]?.message?.content || ''
+
+let parsed
+try {
+  parsed = JSON.parse(aiText)
+} catch {
+  parsed = {
+    title: 'AI generated title',
+    price: 'Check similar listings',
+    tags: 'vintage, handmade, primitive, farmhouse',
+    description: aiText || 'No description generated'
+  }
+}
+
+setResult(parsed)
 }
 
   function copy(text) {
