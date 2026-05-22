@@ -59,10 +59,8 @@ function App() {
     className="previewImage"
   />
 )}
-            <button className="photoButton">
-  Analyze Photo
-</button>
-          </div>
+            
+    
 
           <label>Item notes</label>
           <textarea value={notes} onChange={e => setNotes(e.target.value)} placeholder="Add condition, size, age, flaws..." />
