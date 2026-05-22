@@ -16,14 +16,18 @@ function App() {
     e.target.value = ''
   }
 
-  function generateListing() {
-    setResult({
-      title: 'Vintage Handmade Primitive Decor Piece',
-      price: '$38 - $58',
-      tags: 'primitive decor, farmhouse decor, vintage decor, rustic decor, handmade, country decor, cabin decor, folk art',
-      description: `A charming vintage-style piece with warm primitive character. Great for farmhouse, cabin, rustic, or country home decor. ${notes}`
-    })
-  }
+  async function generateListing() {
+  const response = await fetch('/api/chat')
+
+  const data = await response.json()
+
+  setResult({
+    title: data.choices?.[0]?.message?.content || 'AI failed',
+    price: '$38 - $58',
+    tags: 'AI generated tags coming soon',
+    description: data.choices?.[0]?.message?.content || 'No description generated'
+  })
+}
 
   function copy(text) {
     navigator.clipboard.writeText(text)
