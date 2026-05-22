@@ -59,6 +59,9 @@ function App() {
     className="previewImage"
   />
 )}
+            <button className="photoButton">
+  Analyze Photo
+</button>
           </div>
 
           <label>Item notes</label>
